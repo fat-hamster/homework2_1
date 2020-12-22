@@ -1,6 +1,10 @@
 public class RunningTrack {
     private final int RUN_DISTANCE;
 
+    public int getRUN_DISTANCE() {
+        return RUN_DISTANCE;
+    }
+
     public RunningTrack(int runDistance) {
         RUN_DISTANCE = runDistance;
     }
@@ -10,11 +14,10 @@ public class RunningTrack {
             if(!((Cat) obj).isContinueChamp()) {
                 return;
             }
-            if(RUN_DISTANCE <= ((Cat) obj).getRUN_DISTANCE()) {
+            if(((Cat) obj).run(this)) {
                 System.out.println("Кот" + passMessage());
             } else {
                 System.out.println("Кот" + failMessage());
-                ((Cat) obj).setContinueChamp(false);
             }
             return;
         }
@@ -22,11 +25,10 @@ public class RunningTrack {
             if(!((Human) obj).isContinueChamp()) {
                 return;
             }
-            if(RUN_DISTANCE <= ((Human) obj).getRUN_DISTANCE()) {
+            if(((Human) obj).run(this)) {
                 System.out.println("Человек" + passMessage());
             } else {
                 System.out.println("Человек" + failMessage());
-                ((Human) obj).setContinueChamp(false);
             }
             return;
         }
@@ -34,11 +36,10 @@ public class RunningTrack {
             if(!((Robot) obj).isContinueChamp()) {
                 return;
             }
-            if(RUN_DISTANCE <= ((Robot) obj).getRUN_DISTANCE()) {
+            if(((Robot) obj).run(this)) {
                 System.out.println("Робот" + passMessage());
             } else {
                 System.out.println("Робот" + failMessage());
-                ((Robot) obj).setContinueChamp(false);
             }
         }
     }

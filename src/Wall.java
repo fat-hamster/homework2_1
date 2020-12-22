@@ -14,11 +14,10 @@ public class Wall {
             if(!((Cat) obj).isContinueChamp()) {
                 return;
             }
-            if (WALL_HEIGHT <= ((Cat) obj).getJUMP_DISTANCE()) {
+            if (((Cat) obj).jump(this)) {
                 System.out.println("Кот" + passMessage());
             } else {
                 System.out.println("Кот" + failMessage());
-                ((Cat) obj).setContinueChamp(false);
             }
             return;
         }
@@ -26,11 +25,10 @@ public class Wall {
             if(!((Human) obj).isContinueChamp()) {
                 return;
             }
-            if (WALL_HEIGHT <= ((Human) obj).getJUMP_DISTANCE()) {
+            if (((Human) obj).jump(this)) {
                 System.out.println("Человек" + passMessage());
             } else {
                 System.out.println("Человек" + failMessage());
-                ((Human) obj).setContinueChamp(false);
             }
             return;
         }
@@ -38,11 +36,10 @@ public class Wall {
             if(!((Robot) obj).isContinueChamp()) {
                 return;
             }
-            if (WALL_HEIGHT <= ((Robot) obj).getJUMP_DISTANCE()) {
+            if (((Robot) obj).jump(this)) {
                 System.out.println("Робот" + passMessage());
             } else {
                 System.out.println("Робот" + failMessage());
-                ((Robot) obj).setContinueChamp(false);
             }
             return;
         }

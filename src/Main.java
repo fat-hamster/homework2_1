@@ -44,6 +44,7 @@ public class Main {
     }
 
     private void end() {
+        team.teamResult();
         System.out.println("Мы хорошо провели время! До встречи!");
     }
 }
