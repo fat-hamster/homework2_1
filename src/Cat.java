@@ -34,4 +34,12 @@ public class Cat {
     public void jump() {
         System.out.println("Прыгаю");
     }
+
+    @Override
+    public String toString() {
+        return "Кот {" +
+                "Высота прыжка = " + JUMP_DISTANCE +
+                ", Дистанция бега = " + RUN_DISTANCE +
+                '}';
+    }
 }

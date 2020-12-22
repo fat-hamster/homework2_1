@@ -11,7 +11,10 @@ public class Wall {
 
     public void jumpWall(Object obj) {
         if(obj instanceof Cat) {
-            if (WALL_HEIGHT <= ((Cat) obj).getJUMP_DISTANCE() && ((Cat) obj).isContinueChamp()) {
+            if(!((Cat) obj).isContinueChamp()) {
+                return;
+            }
+            if (WALL_HEIGHT <= ((Cat) obj).getJUMP_DISTANCE()) {
                 System.out.println("Кот" + passMessage());
             } else {
                 System.out.println("Кот" + failMessage());
@@ -20,7 +23,10 @@ public class Wall {
             return;
         }
         if(obj instanceof Human) {
-            if (WALL_HEIGHT <= ((Human) obj).getJUMP_DISTANCE() && ((Human) obj).isContinueChamp()) {
+            if(!((Human) obj).isContinueChamp()) {
+                return;
+            }
+            if (WALL_HEIGHT <= ((Human) obj).getJUMP_DISTANCE()) {
                 System.out.println("Человек" + passMessage());
             } else {
                 System.out.println("Человек" + failMessage());
@@ -29,7 +35,10 @@ public class Wall {
             return;
         }
         if(obj instanceof Robot) {
-            if (WALL_HEIGHT <= ((Robot) obj).getJUMP_DISTANCE() && ((Robot) obj).isContinueChamp()) {
+            if(!((Robot) obj).isContinueChamp()) {
+                return;
+            }
+            if (WALL_HEIGHT <= ((Robot) obj).getJUMP_DISTANCE()) {
                 System.out.println("Робот" + passMessage());
             } else {
                 System.out.println("Робот" + failMessage());
@@ -45,5 +54,10 @@ public class Wall {
 
     private String failMessage() {
         return " не перепрыгнул стену и выбывает";
+    }
+
+    @Override
+    public String toString() {
+        return "Стена высотой " + WALL_HEIGHT + " м";
     }
 }

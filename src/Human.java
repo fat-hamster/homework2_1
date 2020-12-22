@@ -34,4 +34,12 @@ public class Human {
     public void jump() {
         System.out.println("Прыгаю");
     }
+
+    @Override
+    public String toString() {
+        return "Человек {" +
+                "Высота прыжка = " + JUMP_DISTANCE +
+                ", Дистанция бега = " + RUN_DISTANCE +
+                '}';
+    }
 }

@@ -37,9 +37,9 @@ public class Robot {
 
     @Override
     public String toString() {
-        return "Robot{" +
-                "JUMP_DISTANCE=" + JUMP_DISTANCE +
-                ", RUN_DISTANCE=" + RUN_DISTANCE +
+        return "Робот {" +
+                "Высота прыжка = " + JUMP_DISTANCE +
+                ", Дистанция бега = " + RUN_DISTANCE +
                 '}';
     }
 }
