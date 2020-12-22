@@ -15,20 +15,8 @@ public class Human {
         maxRun = 0;
     }
 
-    public int getJUMP_HEIGHT() {
-        return JUMP_HEIGHT;
-    }
-
-    public int getRUN_DISTANCE() {
-        return RUN_DISTANCE;
-    }
-
     public boolean isContinueChamp() {
         return continueChamp;
-    }
-
-    public void setContinueChamp(boolean continueChamp) {
-        this.continueChamp = continueChamp;
     }
 
     public boolean run(RunningTrack track) {
