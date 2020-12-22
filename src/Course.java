@@ -10,11 +10,13 @@ public class Course {
     public void doIt(Team team) {
         for (Object course : courses) {
             if(course instanceof Wall) {
+                System.out.println();
                 System.out.println(((Wall) course));
                 for (Object player : team.teammates) {
                     ((Wall) course).jumpWall(player);
                 }
             } else {
+                System.out.println();
                 System.out.println(((RunningTrack) course));
                 for (Object player : team.teammates) {
                     ((RunningTrack) course).runTrack(player);

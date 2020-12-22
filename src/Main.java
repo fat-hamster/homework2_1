@@ -4,6 +4,8 @@ import java.util.Random;
 public class Main {
     private Course course;
     private Team team;
+    private final int MAX_JUMP_HEIGHT = 6;
+    private final int MAX_RUN_DISTANCE = 50;
 
     public static void main(String[] args) {
         Main game = new Main();
@@ -23,8 +25,8 @@ public class Main {
         players.add(human);
         players.add(robot);
         for (int i = 0; i < 10; i++) {
-            Wall wall = new Wall(new Random().nextInt(6) + 1);
-            RunningTrack track = new RunningTrack(new Random().nextInt(50) + 50);
+            Wall wall = new Wall(new Random().nextInt(MAX_JUMP_HEIGHT) + 1);
+            RunningTrack track = new RunningTrack(new Random().nextInt(MAX_RUN_DISTANCE) + 5);
             obstacleCourse.add(wall);
             obstacleCourse.add(track);
         }
@@ -39,7 +41,6 @@ public class Main {
         for (Object player : team.teammates) {
             System.out.println(player);
         }
-        System.out.println();
         course.doIt(team);
     }
 
