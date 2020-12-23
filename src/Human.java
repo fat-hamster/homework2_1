@@ -15,10 +15,6 @@ public class Human implements Players {
         maxRun = 0;
     }
 
-    public String getName() {
-        return "Человек";
-    }
-
     public boolean isContinueChamp() {
         return continueChamp;
     }

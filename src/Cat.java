@@ -15,10 +15,6 @@ public class Cat implements Players{
         maxRun = 0;
     }
 
-    public String getName() {
-        return "Кот";
-    }
-
     public boolean isContinueChamp() {
         return continueChamp;
     }

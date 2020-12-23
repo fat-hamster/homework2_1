@@ -15,10 +15,6 @@ public class Robot implements Players {
         maxRun = 0;
     }
 
-    public String getName() {
-        return "Робот";
-    }
-
     public boolean isContinueChamp() {
         return continueChamp;
     }
