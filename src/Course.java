@@ -12,76 +12,28 @@ public class Course {
             if(course instanceof Wall) {
                 System.out.println();
                 System.out.println((course));
-                for (Object player : team.teammates) {
-                    if(player instanceof Cat) {
-                        if(!((Cat) player).isContinueChamp()) {
-                            continue;
-                        }
-                        if (((Cat) player).jump((Wall) course)) {
-                            System.out.println("Кот" + passMessage());
-                        } else {
-                            System.out.println("Кот" + failMessage());
-                        }
+
+                for (Players player : team.teammates) {
+                    if(!player.isContinueChamp()) {
                         continue;
                     }
-                    if(player instanceof Human) {
-                        if(!((Human) player).isContinueChamp()) {
-                            continue;
-                        }
-                        if (((Human) player).jump((Wall) course)) {
-                            System.out.println("Человек" + passMessage());
-                        } else {
-                            System.out.println("Человек" + failMessage());
-                        }
-                        continue;
-                    }
-                    if(player instanceof Robot) {
-                        if(!((Robot) player).isContinueChamp()) {
-                            continue;
-                        }
-                        if (((Robot) player).jump((Wall) course)) {
-                            System.out.println("Робот" + passMessage());
-                        } else {
-                            System.out.println("Робот" + failMessage());
-                        }
+                    if (player.jump((Wall) course)) {
+                        System.out.println(player.getName() + passMessage());
+                    } else {
+                        System.out.println(player.getName() + failMessage());
                     }
                 }
             } else {
                 System.out.println();
                 System.out.println((course));
-                for (Object player : team.teammates) {
-                    //((RunningTrack) course).runTrack(player);
-                    if(player instanceof Cat) {
-                        if(!((Cat) player).isContinueChamp()) {
-                            continue;
-                        }
-                        if(((Cat) player).run((RunningTrack) course)) {
-                            System.out.println("Кот" + passMessage());
-                        } else {
-                            System.out.println("Кот" + failMessage());
-                        }
+                for (Players player : team.teammates) {
+                    if(!player.isContinueChamp()) {
                         continue;
                     }
-                    if(player instanceof Human) {
-                        if(!((Human) player).isContinueChamp()) {
-                            continue;
-                        }
-                        if(((Human) player).run((RunningTrack) course)) {
-                            System.out.println("Человек" + passMessage());
-                        } else {
-                            System.out.println("Человек" + failMessage());
-                        }
-                        continue;
-                    }
-                    if(player instanceof Robot) {
-                        if(!((Robot) player).isContinueChamp()) {
-                            continue;
-                        }
-                        if(((Robot) player).run((RunningTrack) course)) {
-                            System.out.println("Робот" + passMessage());
-                        } else {
-                            System.out.println("Робот" + failMessage());
-                        }
+                    if(player.run((RunningTrack) course)) {
+                        System.out.println(player.getName() + passMessage());
+                    } else {
+                        System.out.println(player.getName() + failMessage());
                     }
                 }
             }

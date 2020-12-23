@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Robot {
+public class Robot implements Players {
     private final int JUMP_HEIGHT;
     private final int RUN_DISTANCE;
     private boolean continueChamp;
@@ -13,6 +13,10 @@ public class Robot {
         continueChamp = true;
         maxJump = 0;
         maxRun = 0;
+    }
+
+    public String getName() {
+        return "Робот";
     }
 
     public boolean isContinueChamp() {

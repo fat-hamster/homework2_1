@@ -2,13 +2,13 @@ import java.util.ArrayList;
 
 public class Team {
     private final String name;
-    protected ArrayList<Object> teammates;
+    protected ArrayList<Players> teammates;
 
     public String getName() {
         return name;
     }
 
-    public Team(String name, ArrayList<Object> teammates) {
+    public Team(String name, ArrayList<Players> teammates) {
         this.name = name;
         this.teammates = teammates;
     }
@@ -16,16 +16,8 @@ public class Team {
     public void teamResult() {
         StringBuilder sb = new StringBuilder();
         System.out.println("\nРезультаты команды:");
-        for (Object teammate : teammates) {
-            if(teammate instanceof Cat) {
-                sb.append(((Cat) teammate).info());
-            }
-            if(teammate instanceof Human) {
-                sb.append(((Human) teammate).info());
-            }
-            if(teammate instanceof Robot) {
-                sb.append(((Robot) teammate).info());
-            }
+        for (Players teammate : teammates) {
+            sb.append(teammate.info());
         }
         System.out.println(sb);
     }

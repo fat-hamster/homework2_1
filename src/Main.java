@@ -19,7 +19,7 @@ public class Main {
         Cat cat = new Cat();
         Human human = new Human();
         Robot robot = new Robot();
-        ArrayList<Object> players = new ArrayList<>();
+        ArrayList<Players> players = new ArrayList<>();
         ArrayList<Object> obstacleCourse = new ArrayList<>();
         players.add(cat);
         players.add(human);
@@ -38,7 +38,7 @@ public class Main {
     private void start() {
         System.out.println("команда " + team.getName() + " начинает прохождение полосы препятствий!");
         System.out.println("Состав команды:");
-        for (Object player : team.teammates) {
+        for (Players player : team.teammates) {
             System.out.println(player);
         }
         course.doIt(team);
